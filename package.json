@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/tamatamvan/relazsizes/issues"
   },
-  "homepage": "https://github.com/tamatamvan/relazsizes#readme"
+  "homepage": "https://github.com/tamatamvan/relazsizes#readme",
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "webpack": "^4.35.0"
+  }
 }
