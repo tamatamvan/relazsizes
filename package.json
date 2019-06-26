@@ -1,0 +1,26 @@
+{
+  "name": "relazsizes",
+  "version": "0.1.0",
+  "description": "React wrapper for lazysizes",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamatamvan/relazsizes.git"
+  },
+  "keywords": [
+    "react",
+    "lazysizes",
+    "lazyload",
+    "image",
+    "lazyload"
+  ],
+  "author": "Septian A Tama <septian.a.tama@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamatamvan/relazsizes/issues"
+  },
+  "homepage": "https://github.com/tamatamvan/relazsizes#readme"
+}
