@@ -7,7 +7,7 @@ const DOMisAvailable = window &&
   window.document.createElement
 
 if (DOMisAvailable) {
-  require('lazysizes')
+  !window.lazySizes && require('lazysizes')
 }
 
 class Relazsizes extends Component {
@@ -15,8 +15,8 @@ class Relazsizes extends Component {
     const {
       alt,
       className,
-      datasrc,
-      datasrcset,
+      dataSrc,
+      dataSrcset,
       src,
       ...otherProps
     } = this.props
@@ -24,8 +24,8 @@ class Relazsizes extends Component {
     return (
       <img
         src={src}
-        data-src={datasrc}
-        data-srcset={datasrcset}
+        data-src={dataSrc}
+        data-srcset={dataSrcset}
         className={`lazyload ${className ? className : ''}`}
         alt={alt}
         { ...otherProps }
@@ -37,13 +37,17 @@ class Relazsizes extends Component {
 Relazsizes.propTypes = {
   alt: string,
   className: string,
-  datasrc: string.isRequired,
-  datasrcset: oneOfType([
+  dataSrc: string.isRequired,
+  dataSrcset: oneOfType([
     array,
     object,
     string
   ]),
   src: string,
+}
+
+Relazsizes.defaultProps = {
+  src: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
 }
 
 export default Relazsizes
