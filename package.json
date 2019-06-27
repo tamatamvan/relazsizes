@@ -2,7 +2,7 @@
   "name": "relazsizes",
   "version": "0.1.0",
   "description": "React wrapper for lazysizes",
-  "main": "index.js",
+  "main": "lib/relazsizes.js",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
