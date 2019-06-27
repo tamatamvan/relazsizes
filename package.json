@@ -39,5 +39,8 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "lazysizes": "^5.1.0"
   }
 }
