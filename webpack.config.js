@@ -8,6 +8,9 @@ module.exports = {
     filename: 'relazsizes.js',
     libraryTarget: 'commonjs2'
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
   module: {
     rules: [
       {
@@ -15,10 +18,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
+          loader: 'babel-loader'
         }
       }
     ]
