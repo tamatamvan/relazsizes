@@ -12,12 +12,12 @@ if (DOMisAvailable) {
 
 class Relazsizes extends Component {
   handleSrcset = (el, dataSrcset) => {
-    if (el === 'img' && typeof(dataSrcset) === "object") {
+    if (el === 'img' && typeof(dataSrcset) === 'object') {
       return dataSrcset.reduce((acc, val, idx, data) => (
         `${acc}${val.srcset} ${val.variant}${idx+1 < data.length ? ', ' : ''}`
       ), '')
     }
-    if (el === 'picture' && typeof(data)) {
+    if (el === 'picture' && typeof(data) === 'string') {
       return dataSrcset.split(/,.| \w+\, | \w+/)
         .map(srcset => ({
           srcset
@@ -37,7 +37,7 @@ class Relazsizes extends Component {
       src,
       ...otherProps
     } = this.props
-    const srcSet = dataSrcset && this.handleSrcset(dataSrcset)
+    const srcSet = dataSrcset && this.handleSrcset(el, dataSrcset)
     
     return (
       <>
@@ -45,8 +45,8 @@ class Relazsizes extends Component {
           picture: (
             <picture>
               {
-                srcSet && srcSet.map(val => (
-                  <source data-srcset={val.srcset} media={val.media} type={val.type}/>
+                srcSet && srcSet.map((val, idx) => (
+                  <source data-srcset={val.srcset} media={val.media} type={val.type} key={`src-${idx}`}/>
                 ))
               }
               <img
