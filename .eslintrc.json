@@ -35,6 +35,7 @@
     "semi": [
       "error",
       "never"
-    ]
+    ],
+    "react/jsx-uses-react": "error"
   }
 }
