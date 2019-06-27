@@ -4,6 +4,8 @@
   "description": "React wrapper for lazysizes",
   "main": "index.js",
   "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack",
     "test": "jest --coverage"
   },
   "repository": {
