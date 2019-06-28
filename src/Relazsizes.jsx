@@ -38,6 +38,7 @@ class Relazsizes extends Component {
       ...otherProps
     } = this.props
     const srcSet = dataSrcset && this.handleSrcset(el, dataSrcset)
+    const classNameVal = `lazyload ${className ? className : ''}`
     
     return (
       <>
@@ -52,7 +53,7 @@ class Relazsizes extends Component {
               <img
                 src={src}
                 data-src={dataSrc}
-                className={`lazyload ${className ? className : ''}`}
+                className={classNameVal}
                 alt={alt}
                 {...otherProps}
               />
@@ -63,13 +64,13 @@ class Relazsizes extends Component {
               src={src}
               data-src={dataSrc}
               data-srcset={srcSet}
-              className={`lazyload ${className ? className : ''}`}
+              className={classNameVal}
               alt={alt}
               {...otherProps}
             />
           ),
           iframe: (
-            <iframe />
+            <iframe data-src={dataSrc} className={classNameVal} {...otherProps}/>
           )
         }[el]}
       </>
