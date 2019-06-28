@@ -31,6 +31,7 @@ class Relazsizes extends Component {
     const {
       alt,
       className,
+      dataSizes,
       dataSrc,
       dataSrcset,
       el,
@@ -64,6 +65,7 @@ class Relazsizes extends Component {
               src={src}
               data-src={dataSrc}
               data-srcset={srcSet}
+              data-sizes={dataSizes}
               className={classNameVal}
               alt={alt}
               {...otherProps}
@@ -88,6 +90,7 @@ const srcSetItem = shape({
 Relazsizes.propTypes = {
   alt: string,
   className: string,
+  dataSizes: string,
   dataSrc: string.isRequired,
   dataSrcset: oneOfType([
     arrayOf(srcSetItem),
