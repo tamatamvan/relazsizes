@@ -72,7 +72,11 @@ class Relazsizes extends Component {
             />
           ),
           iframe: (
-            <iframe data-src={dataSrc} className={classNameVal} {...otherProps}/>
+            <iframe
+              data-src={dataSrc}
+              className={classNameVal}
+              {...otherProps}
+            />
           )
         }[el]}
       </>
