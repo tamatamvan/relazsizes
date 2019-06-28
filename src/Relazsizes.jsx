@@ -47,7 +47,7 @@ class Relazsizes extends Component {
           picture: (
             <picture>
               {
-                srcSet && srcSet.map((val, idx) => (
+                (srcSet && el === 'picture') && srcSet.map((val, idx) => (
                   <source data-srcset={val.srcset} media={val.media} type={val.type} key={`src-${idx}`}/>
                 ))
               }
