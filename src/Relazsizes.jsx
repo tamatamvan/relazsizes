@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 
 import { string, arrayOf, shape, oneOfType, oneOf } from 'prop-types'
 
-const DOMisAvailable = window &&
+// update for SSR
+const DOMisAvailable = !!(
+  typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
+)
 
 if (DOMisAvailable) {
   !window.lazySizes && require('lazysizes')
