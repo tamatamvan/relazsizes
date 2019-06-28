@@ -103,6 +103,7 @@ const srcSet2 = `
 | src | string | `'/img/filename-hd.jpg'` | the image placeholder | `'data:image/gif;base64,R0lGODlhA. . .''`|
 
 <span id="value-srcset"/>
+
 ### Value of dataSrcset
 You can use `srcset` attribute when using `img` or `picture` element via `dataSrcset` prop. The type of the prop can be in a string or in an array of object shape defined as `srcSetItem`.
 Passing `dataSrcset` as a string will work the best when you are using `img` el. While you are using `picture` element, it is strongly adviced to pass the value in array of `srcSetItem` instead.
