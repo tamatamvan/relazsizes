@@ -96,11 +96,13 @@ const srcSet2 = `
 |-------|-------|-------------|---------|---------|
 | alt | string | Img Alternate text | `'Image Alt Text'` | |
 | className | string | CSS class names | `'img img-responsive'` | |
-| dataSrcset | array of srcSetItem or string | srcset attribute value if using `img`, and will be generated as `source` element if using `picture`. [Reference if using img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture), [Reference if using picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) | [see here]() | |
+| dataSrcset | array of srcSetItem or string | srcset attribute value if using `img`, and will be generated as `source` element if using `picture`. <br/>[Reference if using img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) <br/>[Reference if using picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) | [see here](#value-srcset) | |
 | dataSizes | string | img sizes attribute, [reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Using_the_srcset_and_sizes_attributes) | `'(max-width: 600px) 200px, 50vw'` or `'auto'` | |
 | dataSrc | string | the main image source that will be lazyloaded | `'/img/cloud-sd.jpg'` | |
 | el | enum: 'img', 'picture', 'iframe' | type of html element to use | `picture` | `'img'` | 
 | src | string | `'/img/filename-hd.jpg'` | the image placeholder | `'data:image/gif;base64,R0lGODlhA. . .''`|
+
+<span id="value-srcset"/>
 
 ### Value of dataSrcset
 You can use `srcset` attribute when using `img` or `picture` element via `dataSrcset` prop. The type of the prop can be in a string or in an array of object shape defined as `srcSetItem`.
