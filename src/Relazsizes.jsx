@@ -2,6 +2,24 @@ import React, { Component } from 'react'
 
 import { string, arrayOf, shape, oneOfType, oneOf } from 'prop-types'
 
+const isSameObj = (obj1, obj2) => {
+  const obj1Keys = Object.keys(obj1)
+  const obj2Keys = Object.keys(obj2)
+
+  if (obj1Keys.length !== obj2Keys.length) {
+    return false
+  }
+
+  for (var i = 0; i < obj1Keys.length; i++) {
+    var propName = obj1Keys[i]
+
+    if (obj1[propName] !== obj2[propName]) {
+      return false
+    }
+  }
+  return true
+}
+
 // update for SSR
 const DOMisAvailable = !!(
   typeof window !== 'undefined' &&
@@ -14,6 +32,11 @@ if (DOMisAvailable) {
 }
 
 class Relazsizes extends Component {
+  constructor(props) {
+    super(props)
+    this.imgRef = React.createRef()
+  }
+
   handleSrcset = (el, dataSrcset) => {
     if (el === 'img' && typeof(dataSrcset) === 'object') {
       return dataSrcset.reduce((acc, val, idx, data) => (
@@ -28,6 +51,21 @@ class Relazsizes extends Component {
         .filter(Boolean)
     }
     return dataSrcset
+  }
+
+  componentDidUpdate (prevProps) {
+    const propChanged = !isSameObj(prevProps, this.props)
+    const lazysizesAvailable = DOMisAvailable && window.lazySizes
+
+    if(propChanged && lazysizesAvailable) {
+      const el = this.imgRef.current
+      if (lazySizes.hC(el, 'lazyloaded')) {
+        lazySizes.rC(el, 'lazyloaded')
+      }
+      if (!lazySizes.hC(el, 'lazyload')) {
+        lazySizes.aC(el, 'lazyload')
+      }
+    }
   }
 
   render () {
@@ -55,6 +93,7 @@ class Relazsizes extends Component {
                 ))
               }
               <img
+                ref={this.imgRef}
                 src={src}
                 data-src={dataSrc}
                 className={classNameVal}
@@ -65,6 +104,7 @@ class Relazsizes extends Component {
           ),
           img: (
             <img
+              ref={this.imgRef}
               src={src}
               data-src={dataSrc}
               data-srcset={srcSet}
@@ -76,6 +116,7 @@ class Relazsizes extends Component {
           ),
           iframe: (
             <iframe
+              ref={this.imgRef}
               data-src={dataSrc}
               className={classNameVal}
               {...otherProps}
