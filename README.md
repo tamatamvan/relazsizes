@@ -1,8 +1,8 @@
 # relazsizes
 
-React wrapper component for [lazysizes](https://github.com/minhtranite/react-lazysizes) 💤🚀
+React wrapper component for [lazysizes](https://github.com/aFarkas/lazysizes). Inspired by [react-lazysizes](https://github.com/minhtranite/react-lazysizes) 💤🚀
 
-Relazsizes is a component for using [lazysizes](https://github.com/minhtranite/react-lazysizes) library in your react application. You can use relazsizes for lazyload image assets in your web application with various strategies and also lazyload iframe to boost your React web app performance.
+Relazsizes is a component for using [lazysizes](https://github.com/aFarkas/lazysizes) library in your react application. You can use relazsizes for lazyload image assets in your web application with various strategies and also lazyload iframe to boost your React web app performance.
 
 ## Table of Contents
 * [Demo](#Demo)
